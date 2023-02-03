@@ -1,0 +1,12 @@
+name: CraftereMemories
+version: '${version}'
+main: com.gmail.necnionch.myplugin.crafterememories.bukkit.CraftereMemoriesPlugin
+api-version: 1.13
+depend: [ CrafterePost, WorldEdit, CoreProtect ]
+authors: [ Necnion8 ]
+description: "既存のデータからCrafterePostの録画ファイルを出力する非公式プラグイン"
+
+commands:
+  crafterepostmemories:
+    description: "CoreProtectのログを読み込んで、MCSR録画ファイルを出力します"
+    aliases: [ craposmemories ]
