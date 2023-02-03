@@ -1,7 +1,6 @@
 package com.gmail.necnionch.myplugin.crafterememories.bukkit;
 
 import com.sk89q.worldedit.WorldEdit;
-import com.sk89q.worldedit.bukkit.WorldEditPlugin;
 import net.coreprotect.CoreProtect;
 import net.coreprotect.CoreProtectAPI;
 import org.bukkit.plugin.Plugin;

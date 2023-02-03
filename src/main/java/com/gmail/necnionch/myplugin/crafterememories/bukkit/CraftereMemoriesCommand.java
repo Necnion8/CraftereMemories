@@ -5,7 +5,6 @@ import com.gmail.necnionch.myplugin.crafterememories.bukkit.converter.CoreProtec
 import com.sk89q.worldedit.IncompleteRegionException;
 import com.sk89q.worldedit.bukkit.BukkitAdapter;
 import com.sk89q.worldedit.math.BlockVector3;
-import com.sk89q.worldedit.regions.CuboidRegion;
 import com.sk89q.worldedit.regions.Region;
 import net.coreprotect.CoreProtectAPI;
 import org.bukkit.ChatColor;
@@ -18,10 +17,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class CraftereMemoriesCommand implements TabExecutor {
 
