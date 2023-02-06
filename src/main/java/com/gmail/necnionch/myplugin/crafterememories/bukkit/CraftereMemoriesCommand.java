@@ -39,6 +39,21 @@ public class CraftereMemoriesCommand implements TabExecutor {
             p.sendMessage(ChatColor.DARK_RED + "wandで保存範囲を選択してください！");
             return true;
         }
+        
+        if (args.length <= 0) {
+            p.sendMessage(ChatColor.DARK_RED + "ログを収集する時間(分)を指定してください");
+            return true;
+        }
+
+        int lookupMinutes;
+        try {
+            lookupMinutes = Integer.parseInt(args[0]);
+            if (lookupMinutes <= 0)
+                throw new NumberFormatException();
+        } catch (NumberFormatException e) {
+            p.sendMessage(ChatColor.DARK_RED + "1以上の数値を指定してください");
+            return true;
+        }
 
         File outputFile = new File(plugin.getDataFolder(), "test.mcsr");
         File outputDir = outputFile.getParentFile();
@@ -54,7 +69,7 @@ public class CraftereMemoriesCommand implements TabExecutor {
         int radius = (int) Math.ceil(center.distance(max));
         Location radiusLocation = BukkitAdapter.adapt(p.getWorld(), center);
         CoreProtectAPI cp = plugin.getCoreProtect();
-        List<String[]> logs = cp.performLookup(45 * 60, null, null, null, null, null, radius, radiusLocation);
+        List<String[]> logs = cp.performLookup(lookupMinutes * 60, null, null, null, null, null, radius, radiusLocation);
 
         if (logs == null) {
             p.sendMessage(ChatColor.DARK_RED + "ログ情報をありませんでした");
